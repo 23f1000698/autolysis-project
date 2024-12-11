@@ -11,7 +11,6 @@ from sklearn.decomposition import PCA
 import requests
 from dateutil.parser import parse
 
-
 AIPROXY_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIzZjEwMDA2OThAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.MKsEq0u8VL9-Iosnud3wj-16sE2GQqVVhN9ESUoAwTg"
 AI_PROXY_BASE_URL = "https://aiproxy.sanand.workers.dev/openai"
 
