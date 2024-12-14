@@ -1,47 +1,72 @@
-```markdown
-# Goodreads Book Analysis Report
+# Book Analysis Report
 
 ## Data Overview
-This analysis is based on a dataset containing **10,000 rows** and **23 columns** of book-related data collected from Goodreads. The dataset includes information about each book's ID, author, original publication year, average rating, ratings count, and textual reviews.
 
-### Key Attributes
-- **Authors**: 4,664 unique authors
-- **Languages**: 25 different language codes available
-- **Publication Years**: Ranging from -1750 to 2017, indicating a diverse array of titles.
-- **Missing Values**: Significant missing data in ISBNs, original titles, and language codes, providing opportunities for data enhancement.
+This analysis is based on a dataset comprising **10,000 rows** and **23 columns** pertaining to various books. Key columns include:
+- `book_id`
+- `authors`
+- `average_rating`
+- `ratings_count`
+- `work_ratings_count`
+- `original_publication_year`
+
+### Missing Values Summary
+The dataset has missing values in several columns:
+- `isbn`: 700 missing
+- `isbn13`: 585 missing
+- `original_publication_year`: 21 missing
+- `original_title`: 585 missing
+- `language_code`: 1084 missing
+
+### Descriptive Statistics
+- Average rating across the dataset: **4.00**
+- Average ratings count: **54,001**
+- Distribution of ratings demonstrates clear engagement from users, with the highest number of 5-star ratings.
 
 ## Analysis Performed
-1. **Descriptive Statistics**: Understanding the basic characteristics of the data, including unique values, counts, means, and standard deviations.
-2. **Correlation Analysis**: Evaluated the relationships between numerical attributes to find potential dependencies, particularly between ratings counts and average ratings.
-3. **Clustering Analysis**: Implemented K-Means clustering to identify groups of books based on their characteristics, categorized into **3 clusters**.
-4. **Visual Data Representation**: Producing visualizations such as heatmaps, distributions, and clustering results for better understanding of data patterns.
+
+1. **Descriptive Analysis**: Summary statistics were used to understand the dataset's central tendencies and dispersions.
+  
+2. **Correlation Analysis**: Investigated relationships between numeric variables to identify significant correlations.
+
+3. **Clustering**: Implemented clustering algorithms to categorize books into distinct groups based on ratings and publication year.
+
+4. **Visualization**: Generated visual representations (heatmaps, histograms) to better comprehend distributions and correlations.
+
+### Correlation Matrix
+![Correlation Heatmap](goodreads/correlation_heatmap.png)
+
+### Book ID Distribution
+![Book ID Distribution](goodreads/book_id_distribution.png)
+
+### Clustering Results
+![Clusters](goodreads/clusters.png)
 
 ## Key Insights
-- **Average Rating and Ratings Count**: There is a negative correlation between total ratings and average ratings (-0.37), indicating books with lower ratings tend to have more ratings, possibly due to being more widely known or marketed.
-  
-- **Top Authors**: The most reviewed author is Stephen King, reflecting a demand for his works, particularly in relation to his publications.
 
-- **Cluster Analysis**:
-  - **Cluster 1 (Most Books)**: Contains 7,195 books, likely mainstream with high ratings.
-  - **Cluster 2 (Moderate Books)**: Includes 2,115 books, indicating a potential target for marketing.
-  - **Cluster 3 (Niche Books)**: Comprises 87 titles, suggesting specialization opportunities.
+1. **Rating Trends**: A negative correlation was found between `ratings_count` and `average_rating`, suggesting that as the number of ratings increases, the average rating tends to decrease slightly.
 
-- **Missing ISBNs**: Approximately 700 entries lack ISBN data, which can limit discoverability—addressing this could enhance database completeness.
+2. **Clusters of Books**: The dataset was segmented into three clusters:
+   - **Cluster 0** (Large): **7,193 books**, generally lower-rated.
+   - **Cluster 1** (Small): **82 books**, high ratings but very few ratings.
+   - **Cluster 2** (Medium): **2,122 books**, moderate ratings.
+
+3. **Publication Year Analysis**: Most popular books are published around the years **2000 - 2015**, indicating a potential preference for newer literature.
+
+4. **ISBN Counts**: The analysis revealed that common ISBNs correlate with higher engagement, showing that these books have gained popularity over time.
 
 ## Implications
-- **Marketing Strategy**: The analysis offers insights into potentially underserved markets (e.g., Cluster 2 and 3). Targeted marketing campaigns could be developed to cater to these groups.
+
+- **For Publishers**: Focus should be directed to developing content similar to highly rated, more recent publications, as they attract higher engagement.
   
-- **Data Quality Improvement**: Reducing the incidence of missing values, especially in ISBNs, could significantly enhance user experience and searchability on platforms, increasing accessibility to more readers.
+- **For Author Marketing**: Authors or publishers can leverage trending publication years to strategize marketing campaigns directed at current readers’ preferences.
 
-- **Diverse Offerings**: Highlighting books from underrepresented languages could attract broader audiences and diversify reading choices, particularly with 1,084 entries missing a language code.
+- **For Readers**: The distribution trends can guide readers in selecting popular novels that align with community ratings.
 
-- **Engagement Strategies**: Books with high ratings but fewer reviews present opportunities for reader engagement and promotion, increasing visibility while leveraging existing popularity.
+- **For Data Enrichment**: The presence of missing data indicates areas for improvement, such as the need to enrich author and publication data to enhance analysis quality.
 
-## Visualizations
-![Correlation Heatmap](goodreads_output/correlation_heatmap.png)
-![Book ID Distribution](goodreads_output/book_id_distribution.png)
-![Clusters](goodreads_output/clusters.png)
-![Top Categories by Title](goodreads_output/title_top_categories.png)
-![Top Categories by ISBN](goodreads_output/isbn_top_categories.png)
+### Conclusion
+The findings from this dataset present actionable strategies for authors, publishers, and marketers to align their offerings with current literary trends and reader preferences while addressing the missing data points that could enhance this analysis further.
 
-```
+![Top Categories by Title](goodreads/title_top_categories.png)
+![Top Categories by ISBN](goodreads/isbn_top_categories.png)

@@ -1,61 +1,71 @@
-# README.md
+```markdown
+# Happiness Analysis Report
 
-## Data Overview
+## 1. Data Overview
+The dataset comprises information from 2363 records focused on subjective well-being metrics across 165 countries spanning various years. It consists of 11 columns detailing factors such as Life Ladder, GDP per capita, social support, healthy life expectancy, and perceptions of freedom, generosity, and corruption, amongst others.
 
-The dataset consists of 2,363 rows and 11 columns, providing insights into the life satisfaction and wellbeing of individuals across 165 countries from the years 2005 to 2023. The following key columns are included:
+- **Total Rows:** 2363
+- **Total Columns:** 11
+- **Key Columns:**
+  - Country Name
+  - Year
+  - Life Ladder
+  - Log GDP per capita
+  - Social Support
+  - Healthy Life Expectancy at Birth
+  - Freedom to Make Life Choices
+  - Generosity
+  - Perceptions of Corruption
+  - Positive Affect
+  - Negative Affect
 
-- **Country name**: The name of the country.
-- **Year**: The year of data collection.
-- **Life Ladder**: A metric representing life satisfaction.
-- **Log GDP per capita**: A measurement of economic wellbeing.
-- **Social support**: Level of perceived support from family and friends.
-- **Healthy life expectancy at birth**: The average number of years a newborn is expected to live in good health.
-- **Freedom to make life choices**: A measure of personal autonomy.
-- **Generosity**: A measure reflecting societal generosity.
-- **Perceptions of corruption**: Levels of perceived corruption in the government.
-- **Positive affect** and **Negative affect**: Indicators of emotional experiences.
+### Missing Values:
+Notably, the dataset contains missing values for several key metrics, including:
+- Log GDP per capita: 28 missing values
+- Healthy life expectancy: 63 missing values
+- Generosity: 81 missing values
 
-### Missing Values
+## 2. Analysis Performed
+We conducted a detailed exploratory analysis focusing on:
+- Descriptive statistics to summarize central tendencies and dispersion.
+- Correlation analysis to identify relationships between happiness metrics and economic-social indicators.
+- Clustering to categorize countries based on their happiness profiles.
 
-The dataset contains various missing values, particularly in the **Generosity** column (81 missing values) and **Perceptions of corruption** (125 missing values).
+### Sample Rows:
+| Country Name  | Year | Life Ladder | Log GDP per capita | Social Support | Healthy Life Expectancy at Birth |
+|---------------|------|-------------|---------------------|----------------|-----------------------------------|
+| Afghanistan   | 2008 | 3.724       | 7.35                | 0.451          | 50.5                              |
+| Afghanistan   | 2009 | 4.402       | 7.509               | 0.552          | 50.8                              |
+| Afghanistan   | 2010 | 4.758       | 7.614               | 0.539          | 51.1                              |
 
-## Analysis Performed
+## 3. Key Insights
+- **Correlation Findings:**
+  - High correlation between **Life Ladder** and **Log GDP per capita** (`0.78`).
+  - Significant relationships between **Social Support** and **Life Ladder** (`0.72`), as well as **Freedom to Make Life Choices** and **Life Ladder** (`0.54`).
+  - **Perceptions of Corruption** negatively correlate with happiness measures (Life Ladder: `-0.43`).
 
-The analysis involved several steps:
-1. **Descriptive Statistics**: Summary statistics were computed to understand the distribution of the data, including means, standard deviations, and ranges for critical columns.
-2. **Correlation Analysis**: Correlations between different variables were investigated to identify potential relationships.
-3. **Clustering**: The data was segmented into three clusters based on correlated features to identify groups with similar life satisfaction characteristics.
-4. **Visualization**: Key insights were illustrated using graphics, including a correlation heatmap, distribution of years, clustering outcomes, and top categories per country.
+- **Clustering Results:**
+  - Three distinct clusters emerged based on life satisfaction measures, with the largest cluster containing 982 countries.
+  - Countries were grouped by similarity of happiness indicators, showcasing diverse patterns of what affects happiness globally.
 
-## Key Insights
+### Visualizations:
+1. **Correlation Heatmap**
+   ![Correlation Heatmap](happiness/correlation_heatmap.png)
 
-- **Correlation Highlights**: 
-  - The **Life Ladder** correlates highly with **Log GDP per capita** (0.78) and **Social support** (0.72), suggesting that economic factors and social networks significantly influence life satisfaction.
-  - **Perceptions of corruption** negatively correlate with **Life Ladder** (-0.43), indicating that higher corruption perception results in lower life satisfaction.
+2. **Year Distribution**
+   ![Year Distribution](happiness/year_distribution.png)
 
-- **Cluster Analysis**: 
-  - The data revealed three distinct clusters based on characteristics such as GDP, life satisfaction levels, and social support. The largest cluster, containing 982 entries, likely includes countries with moderate life satisfaction and GDP.
+3. **Clusters of Happiness**
+   ![Clusters](happiness/clusters.png)
 
-- **Trends Over Time**: 
-  - Life satisfaction has varied across the years, which is depicted in the distribution chart, showing fluctuations likely corresponding to global events and economic changes.
+4. **Top Countries by Happiness Metrics**
+   ![Top Countries](happiness/Country name_top_categories.png)
 
-![Correlation Heatmap](happiness_output/correlation_heatmap.png)  
-*Figure 1: Correlation heatmap illustrating relationships between key variables*
+## 4. Implications
+The results from the analysis provide actionable insights for policymakers and social scientists striving to enhance quality of life:
+- **Economic Development:** Countries should focus on raising GDP per capita as there is a strong correlation with happiness.
+- **Social Infrastructure:** Significant emphasis on improving social support and perceived freedom may lead to increased life satisfaction.
+- **Combating Corruption:** Vulnerabilities in happiness linked to corruption perception suggest that transparency and good governance are critical in policy formulation.
 
-![Year Distribution](happiness_output/year_distribution.png)  
-*Figure 2: Distribution of data over the years*
-
-![Clusters](happiness_output/clusters.png)  
-*Figure 3: Clustering of countries based on wellbeing metrics*
-
-![Top Categories](happiness_output/Country name_top_categories.png)  
-*Figure 4: Top categories for life satisfaction across different countries*
-
-## Implications
-
-The results of this analysis indicate that:
-- **Policy Focus on GDP and Social Support**: Countries registered with lower life satisfaction should consider enhancing economic policies and social support structures to improve overall wellbeing.
-- **Address Perceptions of Corruption**: Tackling corruption could directly improve the happiness index in countries with high levels of perceived corruption.
-- **Targeted Interventions**: Development programs focused on the most dissatisfied clusters could lead to effective interventions tailored to the unique needs of these populations.
-
-By leveraging these insights, governments and organizations can design more effective strategies to enhance quality of life and satisfaction for their citizens.
+The study highlights the interplay between economic factors and social well-being, underscoring the need for multi-faceted approaches in the quest for genuine societal happiness.
+```

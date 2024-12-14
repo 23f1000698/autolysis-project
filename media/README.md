@@ -1,49 +1,51 @@
 # README.md
 
 ## Data Overview
+The dataset contains **2,652 rows** and **8 columns** related to movies, detailing various characteristics such as the release date, language, type, title, contributors, and different ratings including overall, quality, and repeatability.
 
-The dataset consists of **2,652 rows** and **8 columns** that provide information about various entries, including movies, their ratings, and review authors. Here are the key summary details:
+### Summary of Columns
+- **date**: The release date of the movie.
+- **language**: Language of the movie.
+- **type**: Type of the content (e.g., movie).
+- **title**: Title of the movie.
+- **by**: Contributors (actors) involved in the movie.
+- **overall**: Overall rating of the movie.
+- **quality**: Quality rating of the movie.
+- **repeatability**: How likely the movie is to be revisited.
 
-- **Columns** include: `date`, `language`, `type`, `title`, `by`, `overall`, `quality`, `repeatability`.
-- **Missing Values**: There are **99 missing dates** and **262 missing authors**.
-- The **overall** rating's mean is approximately **3.05** with a standard deviation of **0.76**.
-- The **quality** rating's mean is approximately **3.21**, while for **repeatability**, the mean is roughly **1.49**.
-- **Sample of Recent Entries**:
-    - "Meiyazhagan" - 4 Overall, 5 Quality, by Arvind Swamy, Karthi
-    - "Vettaiyan" - 2 Overall, 2 Quality, by Rajnikanth, Fahad Fazil
-    - "Amaran" - 4 Overall, 4 Quality, by Siva Karthikeyan, Sai Pallavi
+### Missing Values
+- **date**: 99 missing entries
+- **by**: 262 missing entries
+
+### Descriptive Statistics
+- The dataset includes **11 unique languages** and **8 unique types** of content, with a predominance of Tamil and movies.
+- Ratings suggest a mean overall rating of approximately **3.05** and a quality rating of **3.21**.
 
 ## Analysis Performed
-
-1. **Descriptive Statistics**: Basic stats were computed, revealing unique counts and distributions.
-2. **Correlation Analysis**: Determined relationships between the `overall`, `quality`, and `repeatability` ratings.
-3. **Clustering Analysis**: Implemented clustering to identify potential groups within the data based on ratings.
-
+The analysis focused on the following aspects:
+- **Descriptive Statistics**: Summary statistics were generated to understand distribution and central tendencies of ratings across various attributes.
+- **Correlation Analysis**: Examined relationships between overall ratings, quality ratings, and repeatability.
+- **Clustering**: Identified patterns in data points, resulting in **3 clusters** based on observed similarities.
+  
 ## Key Insights
+1. **Rating Distribution**: The overall ratings are concentrated predominantly around the mid-range values (as shown in the distribution charts).
+    ![Overall Distribution](media/overall_distribution.png)
+  
+2. **Correlation Findings**: There is a strong correlation (0.83) between overall ratings and quality ratings, suggesting movies rated high in quality are likely viewed positively overall.
+   ![Correlation Heatmap](media/correlation_heatmap.png)
+   
+3. **Influential Contributors**: By analyzing the top contributors, insights can be drawn about personalities who repeatedly engage in high-rated films, which can drive marketing decisions. These relationships are depicted in the charts below.
+   ![Top Contributors](media/by_top_categories.png)
 
-- **Correlation**: High correlation observed between `overall` and `quality` ratings (0.83), suggesting films rated higher generally provide better quality experiences.
-- **Cluster Breakdown**:
-    - **Cluster 1 (1,395 entries)**: Represents a substantial group likely with average ratings.
-    - **Cluster 2 (1,091 entries)**: Slightly fewer high-rated titles, indicating a moderate level of quality.
-    - **Cluster 0 (166 entries)**: May represent lower-rated films needing attention for quality improvement.
-    
-  ![Correlation Heatmap](media_output/correlation_heatmap.png)
-  
-- **Overall Ratings Distribution**: The distribution shows the concentration of ratings around the 3-4 mark, indicating a tendency toward average to good ratings.
-  
-  ![Overall Distribution](media_output/overall_distribution.png)
+4. **Cluster Analysis**: The clustering results point towards distinct group behaviors among movie ratings, indicating varying audience segments with different preferences.
+   ![Clusters](media/clusters.png)
+
+5. **Genre Insights**: The top movie titles indicate which genres or types are more frequently reviewed and rated, informing production strategies.
+   ![Top Titles by Category](media/title_top_categories.png)
 
 ## Implications
+- **Marketing Strategies**: Understanding the correlation between ratings can help marketers align campaigns focused on quality-driven narratives.
+- **Content Development**: Insight into the preferred languages and types suggests a strategic focus on content creation that resonates with high-rating contributors will likely lead to increased viewer ratings.
+- **Audience Segmentation**: The clustering results facilitate targeted marketing based on audience preferences, helping distributors tailor their delivery strategies for segmented groups.
 
-- **Quality Improvement Strategy**: Focus on films in Cluster 0 for enhancements in content and production quality, possibly utilizing insights from the higher-rated clusters.
-- **Market Trends in Ratings**: The popularity of English and Tamil films suggests targeting these languages for future content development, as they appear to dominate the dataset.
-  
-  ![Top Categories by Title](media_output/title_top_categories.png)
-  
-  ![Top Categories by Author](media_output/by_top_categories.png)
-
-- **User Engagement Initiatives**: Enhancing interactions with reviewers could fill gaps for entries with missing authors and boost engagement through community-building practices.
-
-![Clusters](media_output/clusters.png) 
-
-In summary, leveraging these insights will provide pathways to enhancing film quality and viewer satisfaction significantly as well as inform marketing strategies around language and film type.
+In sum, leveraging analysis on ratings, quality, and contributor insights can effectively guide decisions on film production and marketing strategies, ensuring alignment with audience expectations and preferences.
