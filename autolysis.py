@@ -25,7 +25,7 @@ class AutoAnalysis:
         self.df = pd.read_csv(csv_path, encoding='ISO-8859-1')
         self.plots = []
         self.dataset_name = os.path.splitext(os.path.basename(csv_path))[0].lower()
-        self.output_dir = f"{self.dataset_name}_output"
+        self.output_dir = f"{self.dataset_name}"
         os.makedirs(self.output_dir, exist_ok=True)
 
     def query_llm(self, messages):
